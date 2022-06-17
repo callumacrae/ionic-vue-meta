@@ -2,6 +2,7 @@
   <ion-page>
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
+      <p>Meta value: {{ JSON.stringify(meta.meta?.value) }}</p>
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="tab1" href="/tabs/tab1">
           <ion-icon :icon="triangle" />
@@ -22,20 +23,10 @@
   </ion-page>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
 import { ellipse, square, triangle } from 'ionicons/icons';
+import { useActiveMeta } from "vue-meta";
 
-export default defineComponent({
-  name: 'TabsPage',
-  components: { IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage, IonRouterOutlet },
-  setup() {
-    return {
-      ellipse, 
-      square, 
-      triangle,
-    }
-  }
-});
+const meta = useActiveMeta();
 </script>

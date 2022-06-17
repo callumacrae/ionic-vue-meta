@@ -17,13 +17,14 @@
   </ion-page>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { useMeta } from "vue-meta";
 import ExploreContainer from '@/components/ExploreContainer.vue';
 
-export default defineComponent({
-  name: 'Tab2Page',
-  components: { ExploreContainer, IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
+useMeta({
+  meta: {
+    value: "tab two page"
+  },
 });
 </script>
